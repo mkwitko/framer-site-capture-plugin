@@ -1,0 +1,6 @@
+{
+  "id": "sitepromo",
+  "name": "SitePromo Showcase",
+  "modes": ["canvas"],
+  "icon": "/icon.svg"
+}

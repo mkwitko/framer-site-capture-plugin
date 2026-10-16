@@ -1,0 +1,19 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 10 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm biome check . || true   # advisory until the baseline is clean
+      - run: pnpm vitest run packages/worker
+      - run: pnpm --filter @sitepromo/plugin exec vite build
+      # Visual tests need Chrome: install the stable channel used by tests (channel: "chrome").
+      - run: npx playwright install chrome --with-deps
+      - run: node tests/fixtures/sites/make-fixtures.mjs && pnpm vitest run tests/visual

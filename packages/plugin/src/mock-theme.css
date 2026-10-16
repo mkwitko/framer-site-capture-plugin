@@ -1,0 +1,15 @@
+/* Mock-only: Framer injects these variables inside the editor. Values approximate Framer's panel
+   palette for visual QA outside Framer; never shipped to Framer users (loaded only in ?mock mode). */
+:root {
+  --framer-color-bg: #ffffff; --framer-color-bg-secondary: #f5f5f5; --framer-color-bg-tertiary: #ebebeb;
+  --framer-color-control: #e9e9e9; --framer-color-control-hover: #dddddd; --framer-color-divider: #e5e5e5;
+  --framer-color-text: #222222; --framer-color-text-secondary: #666666; --framer-color-text-tertiary: #999999;
+  --framer-color-text-reversed: #ffffff; --framer-color-tint: #0099ff; --framer-color-tint-dark: #0088ee;
+  --framer-color-tint-extra-dark: #0077dd; --framer-color-tint-dimmed: rgba(0, 153, 255, 0.12);
+}
+[data-framer-theme="dark"] {
+  --framer-color-bg: #181818; --framer-color-bg-secondary: #1f1f1f; --framer-color-bg-tertiary: #2a2a2a;
+  --framer-color-control: #2f2f2f; --framer-color-control-hover: #3a3a3a; --framer-color-divider: #2c2c2c;
+  --framer-color-text: #f2f2f2; --framer-color-text-secondary: #a0a0a0; --framer-color-text-tertiary: #777777;
+  --framer-color-text-reversed: #ffffff;
+}

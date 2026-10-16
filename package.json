@@ -1,0 +1,29 @@
+{
+  "name": "sitepromo",
+  "private": true,
+  "packageManager": "pnpm@10.26.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "tsc -b packages/contracts packages/composer packages/worker packages/capture-core packages/plugin",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "biome check .",
+    "plugin:dev": "pnpm --filter @sitepromo/plugin dev",
+    "worker:dev": "pnpm --filter @sitepromo/worker dev"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.0",
+    "@types/node": "^26.6.5",
+    "@types/pngjs": "^6.0.5",
+    "axe-core": "^4.14.0",
+    "esbuild": "0.28.2",
+    "fflate": "0.8.3",
+    "pixelmatch": "^8.0.0",
+    "playwright": "1.64.0",
+    "pngjs": "^7.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}

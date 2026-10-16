@@ -1,0 +1,2 @@
+SESSION_SECRET=change-me-32-bytes-random
+ALLOWED_ORIGIN=https://localhost:5173
